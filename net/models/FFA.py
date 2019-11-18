@@ -1,8 +1,5 @@
-
-
 import torch.nn as nn
 import torch
-
 
 def default_conv(in_channels, out_channels, kernel_size, bias=True):
     return nn.Conv2d(in_channels, out_channels, kernel_size,padding=(kernel_size//2), bias=bias)
@@ -46,7 +43,7 @@ class Block(nn.Module):
         self.palayer=PALayer(dim)
     def forward(self, x):
         res=self.act1(self.conv1(x))
-        res=res+x #local res
+        res=res+x 
         res=self.conv2(res)
         res=self.calayer(res)
         res=self.palayer(res)
