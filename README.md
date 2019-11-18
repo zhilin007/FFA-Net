@@ -20,17 +20,54 @@ To be determined.
 
 Dataset website:[RESIDE](https://sites.google.com/view/reside-dehaze-datasets/) ; Paper arXiv version:[[RESIDE: A Benchmark for Single Image Dehazing](https://www.google.com/url?q=https%3A%2F%2Farxiv.org%2Fpdf%2F1712.04143.pdf&sa=D&sntz=1&usg=AFQjCNHzdt3kMDsvuJ7Ef6R4ev59OFeRYA)]
 
+<details>
+<summary> FILE STRUCTURE</summary>
+
+```
+    FFA-Net
+    |-- README.md
+    |-- net
+    |-- data
+        |-- RESIDEV0
+            |-- ITS
+                |-- hazy
+                    |-- *.png
+                |-- clear
+                    |-- *.png
+            |-- OTS 
+                |-- hazy
+                    |-- *.jpg
+                |-- clear
+                    |-- *.jpg
+            |-- SOTS
+                |-- indoor
+                    |-- hazy
+                        |-- *.png
+                    |-- clear
+                        |-- *.png
+                |-- outdoor
+                    |-- hazy
+                        |-- *.jpg
+                    |-- clear
+                        |-- *.png
+```
+</details>
+
+
+
 ####Usage
 
-*Train*
+##### Train
 
-`python train.py`
+*If you have more computing resources, expanding `bs`, `crop_size`, `gps`, `blocks` will lead to better results*
 
-Test benchmark dataset*
+* train network on `ITS` dataset
+`python main.py --net='ffa' --crop --crop_size=240 --blocks=19 --gps=3 --bs=2 --lr=0.0001 --trainset='its_train' --testset='its_test' --steps=500000 --eval_step=5000`
+* train network on `OTS` ataset
+`python main.py --net='ffa' --crop --crop_size=240 --blocks=19 --gps=3 --bs=2 --lr=0.0001 --trainset='ots_train' --testset='ots_test' --steps=500000 --eval_step=5000`
 
-`python test.py --`
 
-*Test single image*
-
-`python test.py --`
+##### Test
+*Put your images in `net/test_imgs/` and modify `test.py` to suit your needs*
+ * `python test.py`
 
