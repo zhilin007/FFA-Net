@@ -5,11 +5,11 @@
 
 by Xu Qin, Zhilin Wang et al.    Peking university and Beijing University of Aeronautics & Astronautics.
 
-#### Citation
+### Citation
 
 To be determined.
 
-#### Dependencies and Installation
+### Dependencies and Installation
 
 * python3
 * PyTorch>=1.0
@@ -17,7 +17,7 @@ To be determined.
 * numpy
 * matplotlib
 
-#### Datasets Preparation
+### Datasets Preparation
 
 Dataset website:[RESIDE](https://sites.google.com/view/reside-dehaze-datasets/) ; Paper arXiv version:[[RESIDE: A Benchmark for Single Image Dehazing](https://www.google.com/url?q=https%3A%2F%2Farxiv.org%2Fpdf%2F1712.04143.pdf&sa=D&sntz=1&usg=AFQjCNHzdt3kMDsvuJ7Ef6R4ev59OFeRYA)]
 
@@ -56,9 +56,9 @@ Dataset website:[RESIDE](https://sites.google.com/view/reside-dehaze-datasets/) 
 
 
 
-#### Usage
+### Usage
 
-##### Train
+#### Train
 
 *Remove annotation from [main.py](net/main.py) if you want to use `tensorboard` or view `intermediate predictions`*
 
@@ -79,7 +79,7 @@ train network on `OTS` dataset
  ```
 
 
-##### Test
+#### Test
 *Put your images in `net/test_imgs/` and modify `test.py` to suit your needs*
  ```python
  python test.py
