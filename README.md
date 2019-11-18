@@ -1,8 +1,9 @@
-## AAAI 2020 | Accepted paper : " FFA-Net: Feature Fusion Attention Network for Single Image Dehazing " official implementation.
+##  [FFA-Net: Feature Fusion Attention Network for Single Image Dehazing]() (AAAI 2020)
+ Official implementation.
 
 ---
 
-by Xu Qin, Zhilin Wang et al.    Peking university and Beihang university.
+by Xu Qin, Zhilin Wang et al.    Peking university and Beijing University of Aeronautics & Astronautics.
 
 #### Citation
 
@@ -59,19 +60,27 @@ Dataset website:[RESIDE](https://sites.google.com/view/reside-dehaze-datasets/) 
 
 ##### Train
 
-如果你想使用tensorboard或查看中间预测结果的话,把main.py的注释删除 --记得翻译成英语
+*Remove annotation from [main.py](net/main.py) if you want to use `tensorboard` or view `intermediate predictions`*
 
 *If you have more computing resources, expanding `bs`, `crop_size`, `gps`, `blocks` will lead to better results*
 
-* train network on `ITS` dataset
+train network on `ITS` dataset
 
-`python main.py --net='ffa' --crop --crop_size=240 --blocks=19 --gps=3 --bs=2 --lr=0.0001 --trainset='its_train' --testset='its_test' --steps=500000 --eval_step=5000`
-* train network on `OTS` ataset
+ ```python
+ python main.py --net='ffa' --crop --crop_size=240 --blocks=19 --gps=3 --bs=2 --lr=0.0001 --trainset='its_train' --testset='its_test' --steps=500000 --eval_step=5000
+ ```
 
-`python main.py --net='ffa' --crop --crop_size=240 --blocks=19 --gps=3 --bs=2 --lr=0.0001 --trainset='ots_train' --testset='ots_test' --steps=500000 --eval_step=5000`
+
+train network on `OTS` dataset
+
+
+ ```python
+ python main.py --net='ffa' --crop --crop_size=240 --blocks=19 --gps=3 --bs=2 --lr=0.0001 --trainset='ots_train' --testset='ots_test' --steps=500000 --eval_step=5000
+ ```
 
 
 ##### Test
 *Put your images in `net/test_imgs/` and modify `test.py` to suit your needs*
- * `python test.py`
-
+ ```python
+ python test.py
+```
