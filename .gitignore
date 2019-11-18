@@ -8,9 +8,9 @@ __pycache__/
 *.npy
 *.png
 *.jpg
-DIV2k/
+
 data/
-Set5/
+
 RESIDEV0/
 logs/
 
