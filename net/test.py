@@ -9,7 +9,7 @@ import os
 import torchvision.utils as vutils
 import matplotlib.pyplot as plt
 from torchvision.utils import make_grid
-abs=os.getcwd()+'/net/'
+abs=os.getcwd()+'/'
 def tensorShow(tensors,titles=['haze']):
         fig=plt.figure()
         for tensor,tit,i in zip(tensors,titles,range(len(tensors))):
@@ -20,32 +20,29 @@ def tensorShow(tensors,titles=['haze']):
             ax.set_title(tit)
         plt.show()
 
-model_dir=abs+'trained_models/its_train_ffa_3_19.pk'
-haze=abs+'test_imgs/1445_8.png'
-
-# gt=abs+'test_imgs/1442.png'
-
+dataset='its'
+gps=3
+blocks=19
+img_dir=abs+'test_imgs/'
+output_dir=abs+f'pred_FFA_{dataset}'
+model_dir=abs+f'trained_models/{dataset}_train_ffa_{gps}_{blocks}.pk'
 device='cuda' if torch.cuda.is_available() else 'cpu'
 ckp=torch.load(model_dir,map_location=device)
-net=FFA(gps=3,blocks=19)
+print('max_psnr',ckp['max_psnr'],'| max_ssim',ckp['max_ssim'])
+net=FFA(gps=gps,blocks=blocks)
 net=nn.DataParallel(net)
 net.load_state_dict(ckp['model'])
 net.eval()
-haze = Image.open(haze)
-# gt=Image.open(gt)
-haze1= tfs.Compose([
-    tfs.ToTensor(),
-    tfs.Normalize(mean=[0.64, 0.6, 0.58],std=[0.14,0.15, 0.152])
-])(haze)[None,::]
-haze_no=tfs.ToTensor()(haze)[None,::]
-# gt=tfs.ToTensor()(gt)[None,::]
-
-def pred(net,haze1):
+for im in os.listdir(img_dir):
+    print(f'\r {im}',end='',flush=True)
+    haze = Image.open(img_dir+im)
+    haze1= tfs.Compose([
+        tfs.ToTensor(),
+        tfs.Normalize(mean=[0.64, 0.6, 0.58],std=[0.14,0.15, 0.152])
+    ])(haze)[None,::]
+    haze_no=tfs.ToTensor()(haze)[None,::]
     with torch.no_grad():
         pred = net(haze1)
-
-ts=torch.squeeze(pred.clamp(0,1).cpu())
-tensorShow([haze_no,pred.clamp(0,1)],['haze','pred'])
-# ts=vutils.make_grid([torch.squeeze(haze_no.cpu()),torch.squeeze(gt.cpu()),torch.squeeze(pred.clamp(0,1).cpu())])
-# vutils.save_image(ts,f'samples/{model_name}/{step}_{psnr1:.4}_{ssim1:.4}.png')
-vutils.save_image(ts,'1445_ffa.png')
+    ts=torch.squeeze(pred.clamp(0,1).cpu())
+    tensorShow([haze_no,pred.clamp(0,1).cpu()],['haze','pred'])
+    vutils.save_image(ts,output_dir+im.split('.')[0]+'_FFA.png')

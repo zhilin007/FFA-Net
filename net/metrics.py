@@ -9,7 +9,7 @@ from torch.autograd import Variable
 from math import exp
 import math
 import numpy as np
-from skimage import measure
+
 import torch
 import torch.nn.functional as F
 from torch.autograd import Variable

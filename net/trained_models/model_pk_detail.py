@@ -12,6 +12,6 @@ def print_ckp(dir):
 			print(f'{key} : {value}')
 
 if __name__ == "__main__":
-	dir='***.pk'
+	dir='its_train_ffa_3_19.pk'
 	print_ckp(dir)
 
