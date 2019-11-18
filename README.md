@@ -3,7 +3,7 @@
 
 ---
 
-by Xu Qin, Zhilin Wang et al.    Peking university and Beijing University of Aeronautics & Astronautics.
+by Xu Qin, Zhilin Wang et al.    Peking University and Beijing University of Aeronautics & Astronautics.
 
 ### Citation
 
