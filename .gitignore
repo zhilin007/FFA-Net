@@ -1,7 +1,18 @@
+.vscode/
+*.zip
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
 *$py.class
+
+*.npy
+*.png
+*.jpg
+DIV2k/
+data/
+Set5/
+RESIDEV0/
+logs/
 
 # C extensions
 *.so
