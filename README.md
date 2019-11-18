@@ -80,7 +80,7 @@ train network on `OTS` dataset
 
 
 #### Test
-*Put your images in `net/test_imgs/` and modify `test.py` to suit your needs*
+*Put your images in `net/test_imgs/`*
  ```python
  python test.py
 ```
