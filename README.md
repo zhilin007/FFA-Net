@@ -64,8 +64,10 @@ Dataset website:[RESIDE](https://sites.google.com/view/reside-dehaze-datasets/) 
 *If you have more computing resources, expanding `bs`, `crop_size`, `gps`, `blocks` will lead to better results*
 
 * train network on `ITS` dataset
+
 `python main.py --net='ffa' --crop --crop_size=240 --blocks=19 --gps=3 --bs=2 --lr=0.0001 --trainset='its_train' --testset='its_test' --steps=500000 --eval_step=5000`
 * train network on `OTS` ataset
+
 `python main.py --net='ffa' --crop --crop_size=240 --blocks=19 --gps=3 --bs=2 --lr=0.0001 --trainset='ots_train' --testset='ots_test' --steps=500000 --eval_step=5000`
 
 
