@@ -78,7 +78,7 @@ class RESIDE_Dataset(data.Dataset):
 import os
 pwd=os.getcwd()
 print(pwd)
-path='/home/zhilin007/VscodeProjects/dehaze/data'#path to your 'data' folder
+path='/home/zhilin007/VS/FFA-Net/data'#path to your 'data' folder
 
 ITS_train_loader=DataLoader(dataset=RESIDE_Dataset(path+'/RESIDEV0/ITS',train=True,size=crop_size),batch_size=BS,shuffle=True)
 ITS_test_loader=DataLoader(dataset=RESIDE_Dataset(path+'/RESIDEV0/SOTS/indoor',train=False,size='whole img'),batch_size=1,shuffle=False)

@@ -66,13 +66,13 @@ def train(net,loader_train,loader_test,optim,criterion):
 		if opt.perloss:
 			loss2=criterion[1](out,y)
 			loss=loss+0.04*loss2
-		loss=loss/opt.m*1.0
+		
 		loss.backward()
-		if step%opt.m == 0 :
-			optim.step()
-			optim.zero_grad()
-			losses.append(loss.item())
-			print(f'\rtrain loss : {loss.item():.5f}| step :{step}/{opt.steps}|lr :{lr :.7f} |time_used :{(time.time()-start_time)/60 :.1f}',end='',flush=True)
+		
+		optim.step()
+		optim.zero_grad()
+		losses.append(loss.item())
+		print(f'\rtrain loss : {loss.item():.5f}| step :{step}/{opt.steps}|lr :{lr :.7f} |time_used :{(time.time()-start_time)/60 :.1f}',end='',flush=True)
 
 		#with SummaryWriter(logdir=log_dir,comment=log_dir) as writer:
 		#	writer.add_scalar('data/loss',loss,step)
