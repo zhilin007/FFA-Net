@@ -84,11 +84,10 @@ train network on `OTS` dataset
  ```python
  python test.py
 ```
+#### Samples
 
 <p align='center'>
-
-<img src="net/test_imgs/1400_2.png" height="400px" width='600px'> 
-
-<img src='net/pred_FFA_its/1400_2_FFA.png' height="400px" width='600px' >
+<img src="net/test_imgs/1400_2.png" height="306px" width='413px'> 
+<img src='net/pred_FFA_its/1400_2_FFA.png' height="306px" width='413px' >
 
 </div>
