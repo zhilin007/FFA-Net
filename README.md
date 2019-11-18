@@ -1,2 +1,3 @@
-# FFA-Net_Single-Image-Dehazing
-FFA-Net: Feature Fusion Attention Network for Single Image Dehazing;PyTorch;AAAI2020;FFA;Dehaze;
+### AAAI 2020 Accepted paper "FFA-Net: Feature Fusion Attention Network for Single Image Dehazing" official implementation.
+
+Requirements:
