@@ -59,6 +59,8 @@ Dataset website:[RESIDE](https://sites.google.com/view/reside-dehaze-datasets/) 
 
 ##### Train
 
+如果你想使用tensorboard或查看中间预测结果的话,把main.py的注释删除 --记得翻译成英语
+
 *If you have more computing resources, expanding `bs`, `crop_size`, `gps`, `blocks` will lead to better results*
 
 * train network on `ITS` dataset

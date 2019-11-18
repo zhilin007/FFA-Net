@@ -25,6 +25,8 @@ gps=3
 blocks=19
 img_dir=abs+'test_imgs/'
 output_dir=abs+f'pred_FFA_{dataset}/'
+if not os.path.exists(output_dir):
+    os.mkdir(output_dir)
 model_dir=abs+f'trained_models/{dataset}_train_ffa_{gps}_{blocks}.pk'
 device='cuda' if torch.cuda.is_available() else 'cpu'
 ckp=torch.load(model_dir,map_location=device)
