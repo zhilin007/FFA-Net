@@ -1,4 +1,4 @@
-##  [FFA-Net: Feature Fusion Attention Network for Single Image Dehazing]() (AAAI 2020)
+##  [FFA-Net: Feature Fusion Attention Network for Single Image Dehazing](https://arxiv.org/abs/1911.07559) (AAAI 2020)
  Official implementation.
 
 ---
