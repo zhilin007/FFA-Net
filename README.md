@@ -29,7 +29,7 @@ Dataset website:[RESIDE](https://sites.google.com/view/reside-dehaze-datasets/) 
     |-- README.md
     |-- net
     |-- data
-        |-- RESIDEV0
+        |-- RESIDE
             |-- ITS
                 |-- hazy
                     |-- *.png
