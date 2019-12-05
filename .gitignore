@@ -6,8 +6,7 @@ __pycache__/
 *$py.class
 
 *.npy
-.png
-.jpg
+*.pk
 
 data/
 

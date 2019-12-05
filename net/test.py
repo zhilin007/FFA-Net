@@ -1,11 +1,10 @@
-import os
+import os,argparse
 import numpy as np
 from PIL import Image
 from models import *
 import torch
 import torch.nn as nn
 import torchvision.transforms as tfs 
-import os
 import torchvision.utils as vutils
 import matplotlib.pyplot as plt
 from torchvision.utils import make_grid
@@ -20,17 +19,21 @@ def tensorShow(tensors,titles=['haze']):
             ax.set_title(tit)
         plt.show()
 
-dataset='its'
+parser=argparse.ArgumentParser()
+parser.add_argument('--task',type=str,default='its',help='its or ots')
+parser.add_argument('--test_imgs',type=str,default='test_imgs',help='Test imgs folder')
+opt=parser.parse_args()
+dataset=opt.task
 gps=3
 blocks=19
-img_dir=abs+'test_imgs/'
+img_dir=abs+opt.test_imgs+'/'
 output_dir=abs+f'pred_FFA_{dataset}/'
+print("pred_dir:",output_dir)
 if not os.path.exists(output_dir):
     os.mkdir(output_dir)
 model_dir=abs+f'trained_models/{dataset}_train_ffa_{gps}_{blocks}.pk'
 device='cuda' if torch.cuda.is_available() else 'cpu'
 ckp=torch.load(model_dir,map_location=device)
-print('max_psnr',ckp['max_psnr'],'| max_ssim',ckp['max_ssim'])
 net=FFA(gps=gps,blocks=blocks)
 net=nn.DataParallel(net)
 net.load_state_dict(ckp['model'])

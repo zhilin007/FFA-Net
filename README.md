@@ -16,6 +16,7 @@ To be determined.
 * NVIDIA GPU+CUDA
 * numpy
 * matplotlib
+* tensorboardX(optional)
 
 ### Datasets Preparation
 
@@ -55,7 +56,11 @@ Dataset website:[RESIDE](https://sites.google.com/view/reside-dehaze-datasets/) 
 </details>
 
 
-
+### Metrics update
+|TASK|PSNR|SSIM|
+|-|-|-|
+|ITS|36.3917|0.9886|
+|OTS|33.5703|0.9840|
 ### Usage
 
 #### Train
@@ -75,19 +80,32 @@ train network on `OTS` dataset
 
 
  ```shell
- python main.py --net='ffa' --crop --crop_size=240 --blocks=19 --gps=3 --bs=2 --lr=0.0001 --trainset='ots_train' --testset='ots_test' --steps=500000 --eval_step=5000
+ python main.py --net='ffa' --crop --crop_size=240 --blocks=19 --gps=3 --bs=2 --lr=0.0001 --trainset='ots_train' --testset='ots_test' --steps=1000000 --eval_step=5000
  ```
 
 
 #### Test
+
+Trained_models are available at https://pan.baidu.com/s/1-pgSXN6-NXLzmTp21L_qIg with code: `4gat`
+
+*Put  models in the `net/trained_models/`folder.*
+
 *Put your images in `net/test_imgs/`*
+
  ```shell
- python test.py
+ python test.py --task='its or ots' --test_imgs='test_imgs'
 ```
 #### Samples
 
 <p align='center'>
-<img src="net/test_imgs/1400_2.png" height="306px" width='413px'> 
-<img src='net/pred_FFA_its/1400_2_FFA.png' height="306px" width='413px' >
+<img src="fig/1400_2.png" height="306px" width='413px'> 
+<img src='fig/1400_2_FFA.png' height="306px" width='413px' >
 
 </div>
+
+<p align='center'>
+<img src='fig/0099_0.9_0.16.jpg' height="606px" width='413px'> 
+<img src='fig/0099_0_FFA.png' height="606px" width='413px' >
+
+</div>
+
