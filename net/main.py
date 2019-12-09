@@ -16,7 +16,7 @@ from data_utils import *
 from torchvision.models import vgg16
 print('log_dir :',log_dir)
 print('model_name:',model_name)
-mean=[0.45627367, 0.38360259, 0.36426624]#clear
+
 models_={
 	'ffa':FFA(gps=opt.gps,blocks=opt.blocks),
 }
