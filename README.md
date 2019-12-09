@@ -57,7 +57,7 @@ Dataset website:[RESIDE](https://sites.google.com/view/reside-dehaze-datasets/) 
 
 
 ### Metrics update
-|Methods|Indoor(PSNR/SSIM)|Outdoor([PSNR/SSIM)|
+|Methods|Indoor(PSNR/SSIM)|Outdoor(PSNR/SSIM)|
 |-|-|-|
 |DCP|16.62/0.8179|19.13/0.8148|
 |AOD-Net|19.06/0.8504|20.29/0.8765|
