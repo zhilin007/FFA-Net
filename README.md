@@ -7,7 +7,15 @@ by Xu Qin, Zhilin Wang et al.    Peking University and Beijing University of Aer
 
 ### Citation
 
-To be determined.
+@inproceedings{qin2020ffa,
+  title={FFA-Net: Feature fusion attention network for single image dehazing},
+  author={Qin, Xu and Wang, Zhilin and Bai, Yuanchao and Xie, Xiaodong and Jia, Huizhu},
+  booktitle={Proceedings of the AAAI Conference on Artificial Intelligence},
+  volume={34},
+  number={07},
+  pages={11908--11915},
+  year={2020}
+}
 
 ### Dependencies and Installation
 
