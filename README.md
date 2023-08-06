@@ -26,6 +26,15 @@ by Xu Qin, Zhilin Wang et al.    Peking University and Beijing University of Aer
 * matplotlib
 * tensorboardX(optional)
 
+### Environment Setup
+```
+conda create -n pt1.0 python=3.6
+conda activate pt1.0
+
+conda install pytorch-cpu==1.0.0 torchvision-cpu==0.2.1 cpuonly -c pytorch
+conda install numpy matplotlib
+```
+
 ### Datasets Preparation
 
 Dataset website:[RESIDE](https://sites.google.com/view/reside-dehaze-datasets/) ; Paper arXiv version:[[RESIDE: A Benchmark for Single Image Dehazing](https://www.google.com/url?q=https%3A%2F%2Farxiv.org%2Fpdf%2F1712.04143.pdf&sa=D&sntz=1&usg=AFQjCNHzdt3kMDsvuJ7Ef6R4ev59OFeRYA)]
